@@ -20,5 +20,11 @@ public class PacienteServiceImpl implements PacienteService {
         // TODO Auto-generated method stub
         return repository.findAll();
     }
+
+    @Override
+    public void save(Paciente paciente) {
+        // TODO Auto-generated method stub
+        repository.save(paciente);
+    }
     
 }
