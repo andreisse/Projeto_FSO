@@ -18,6 +18,21 @@ lang="en">
                     <input type="text" class="form-control" th:field="*{nomePaciente}" id="txtNome"/>
                 </div>
 
+                <div class="form-group">
+                    <label for="intCpf" >Cpf</label>
+                    <input type="number" class="form-control" th:field="*{cpf}" id="intCpf"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateData" >Data Nascimento</label>
+                    <input type="date" class="form-control" th:field="*{dataNascimento}" id="dateData"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="intTelefone" >Telefone</label>
+                    <input type="number" class="form-control" th:field="*{telefone}" id="intTelefone"/>
+                </div>
+
                 <div class="form-group" >
                     <button type="submit" class="btn btn-primary" >
                         Enviar
