@@ -3,6 +3,7 @@ package br.univille.dentista.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,7 +29,7 @@ public class PacienteController {
     public ModelAndView novo(){
         var paciente = new Paciente();
         return new ModelAndView("paciente/form","paciente", paciente);
-    }
+    } 
 
     @PostMapping(params = "form")
     public ModelAndView save(Paciente paciente){
@@ -36,4 +37,15 @@ public class PacienteController {
         return new ModelAndView("redirect:/paciente");
     }
 
+    @GetMapping("/alterar/{id}")
+    public ModelAndView alterar(@PathVariable("id") long id){
+        Paciente paciente = pacienteService.findById(id);
+
+        return new ModelAndView("paciente/form", "paciente", paciente);
+    }
+    @GetMapping("/remover/{id}")
+    public ModelAndView remover (@PathVariable("id") long id){
+        pacienteService.delete(id);
+        return new ModelAndView("redirect:/paciente");
+    }
 }
