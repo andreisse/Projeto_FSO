@@ -11,21 +11,21 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
-public class Paciente {
+public class Consulta {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column(length = 600)
-    private String nomePaciente;
+    private String nomeConsulta;
+    
     @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-mm-dd")
-    private Date dataNascimento;
+    private Date dataConsulta;
 
-    private long cpf;
-
-    private long telefone;
+    private String descricao;
 
     public long getId() {
         return id;
@@ -35,35 +35,28 @@ public class Paciente {
         this.id = id;
     }
 
-    public String getNomePaciente() {
-        return nomePaciente;
+    public String getNomeConsulta() {
+        return nomeConsulta;
     }
 
-    public void setNomePaciente(String nomePaciente) {
-        this.nomePaciente = nomePaciente;
+    public void setNomeConsulta(String nomeConsulta) {
+        this.nomeConsulta = nomeConsulta;
     }
 
-    public long getCpf() {
-        return cpf;
+    public Date getDataConsulta() {
+        return dataConsulta;
     }
 
-    public void setCpf(long cpf) {
-        this.cpf = cpf;
+    public void setDataNascimento(Date dataConsulta) {
+        this.dataConsulta = dataConsulta;
     }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
-
-    public long getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(long telefone) {
-        this.telefone = telefone;
-    }    
+    
 }

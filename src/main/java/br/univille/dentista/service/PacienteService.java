@@ -5,9 +5,7 @@ import br.univille.dentista.entity.Paciente;
 
 public interface PacienteService {
     List<Paciente> getAll();
-
     void save(Paciente paciente);
     Paciente findById(long id);
-
     void delete(long id);
 }
