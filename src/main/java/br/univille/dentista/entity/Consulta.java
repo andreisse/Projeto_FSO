@@ -22,8 +22,21 @@ public class Consulta {
     private String nomeConsulta;
     
     @Temporal(value = TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataConsulta;
+
+    @Temporal(value = TemporalType.TIME)
+    @DateTimeFormat(pattern = "HH:mm")
+    private Date horario;
+
+    public Date getHorario() {
+        return horario;
+    }
+
+    public void setHorario(Date horario) {
+        this.horario = horario;
+    }
 
     private String descricao;
 
@@ -47,7 +60,8 @@ public class Consulta {
         return dataConsulta;
     }
 
-    public void setDataNascimento(Date dataConsulta) {
+    public void setDataConsulta(Date dataConsulta) {
+
         this.dataConsulta = dataConsulta;
     }
 

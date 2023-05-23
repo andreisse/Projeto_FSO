@@ -7,7 +7,9 @@
 <body>
     <nav th:replace="layout :: menu">(menu)</nav>
     <main class="container">
+
         <a th:href="@{/consulta/novo}" class="btn btn-primary">Nova Consulta</a>
+
         <table class="table" id="tabconsultas" >
             <thead>
                 <tr>
@@ -18,21 +20,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="umaConsulta : ${listaCosultas}">
+                <tr th:each="umaConsulta : ${listaConsulta}">
                     <td th:text="${umaConsulta.nomeConsulta}"></td>
                     <td th:text="${umaConsulta.dataConsulta}"></td>
+                    <td th:text="${umaConsulta.horario}"></td>
                     <td th:text="${umaConsulta.descricao}"></td>
-                    <td><a class="btn btn-secondary" th:href="@{'/consulta/alterar/' + ${umaConsulta.id}}">Alterar Consulta</a>
-                    <td><a class="btn btn-danger js-delete"
-                        th:href="@{'consulta/remover/' + ${umaConsulta.id}}">Excluir Consulta</a>
-                    </td>
-
-                    <!-- <button class="btn btn-danger js-delete" 
+                    <td><a class="btn btn-secondary" th:href="@{'/consulta/alterar/' + ${umaConsulta.id}}">Alterar</a>
+                    <button class="btn btn-danger js-delete" 
                         th:data-id="${umaConsulta.id}">
                         Excluir
                     </button>
-                    </td> -->
-
+                    </td>
+main
                 </tr>
             </tbody>
         </table>

@@ -8,6 +8,7 @@
     <nav th:replace="layout :: menu">(menu)</nav>
     <main class="container">
         <a th:href="@{/paciente/novo}" class="btn btn-primary">Novo Paciente</a>
+
         <table class="table" id="tabpacientes" >
             <thead>
                 <tr>
@@ -24,17 +25,14 @@
                     <td th:text="${umPaciente.cpf}"></td>
                     <td th:text="${umPaciente.dataNascimento}"></td>
                     <td th:text="${umPaciente.telefone}"></td>
-                    <td><a class="btn btn-secondary" th:href="@{'/paciente/alterar/' + ${umPaciente.id}}">Alterar Paciente</a>
-                    <!-- <td><a class="btn btn-danger js-delete"
-                        th:href="@{'paciente/remover/' + ${umPaciente.id}}">Excluir Paciente</a>
-                    </td> -->
 
-                    <button class="btn btn-danger js-delete" id="btnDeletePaciente" 
+                    <td><a class="btn btn-secondary" th:href="@{'/paciente/alterar/' + ${umPaciente.id}}">Alterar</a>
+                    <button class="btn btn-danger js-delete" 
                         th:data-id="${umPaciente.id}">
-                        Excluir 
+                        Excluir
                     </button>
                     </td>
-                    
+
                 </tr>
             </tbody>
         </table>
@@ -45,7 +43,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Excluir cliente</h5>
-                    <button type="button" class="close" data-dismiss="modal" id="close" aria-label="Close">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>

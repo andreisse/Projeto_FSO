@@ -11,5 +11,4 @@ public interface PacienteRepository extends JpaRepository<Paciente,Long> {
     default List<Paciente> getAll() {
         return findAll();
     }
-    
 }
