@@ -7,18 +7,23 @@
     <body>
         <nav th:replace="layout :: menu" >(menu)</nav>
         <main class="container" >
-            <form th:action="@{/paciente/(form)}" method="POST" th:object="${paciente}" >
+            <form th:action="@{/dentista/(form)}" method="POST" th:object="${dentista}" >
 
                 <input type="hidden" th:field="*{id}" > 
 
                 <div class="form-group">
                     <label for="txtNome" >Nome</label>
-                    <input type="text" class="form-control" th:field="*{nomePaciente}" id="txtNome"/>
+                    <input type="text" class="form-control" th:field="*{nomeDentista}" id="txtNome"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="intCpf" >Cpf</label>
+                    <label for="intCpf" >CPF</label>
                     <input type="number" class="form-control" th:field="*{cpf}" id="intCpf"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="intCro" >CRO</label>
+                    <input type="number" class="form-control" th:field="*{cro}" id="intCro"/>
                 </div>
 
                 <div class="form-group">
@@ -32,15 +37,12 @@
                 </div>
 
                 <div class="form-group" >
-
                     <button type="submit" class="btn btn-primary mt-2" >
-
                         Enviar
                     </button>
                 </div>
             </form>
         </main>
-
         <div th:include="layout :: footer" >(footer)</div>
     </body>
 </html>
