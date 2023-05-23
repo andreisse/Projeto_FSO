@@ -13,14 +13,16 @@
                 <tr>
                     <th>Consulta</th>
                     <th>Data da Consulta</th>
+                    <th>Horário</th>
                     <th>Descrição</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="umaConsulta : ${listaCosultas}">
+                <tr th:each="umaConsulta : ${listaConsulta}">
                     <td th:text="${umaConsulta.nomeConsulta}"></td>
                     <td th:text="${umaConsulta.dataConsulta}"></td>
+                    <td th:text="${umaConsulta.horario}"></td>
                     <td th:text="${umaConsulta.descricao}"></td>
                     <td><a class="btn btn-secondary" th:href="@{'/consulta/alterar/' + ${umaConsulta.id}}">Alterar</a>
                     <button class="btn btn-danger js-delete" 
