@@ -14,7 +14,7 @@ public class HomeController {
     public ModelAndView index() {
         HashMap<String, String> map = new HashMap<>();
         map.put("apelido", "apelido");
-        map.put("nome", "Zeferino");
+        map.put("nome", "teste");
         return new ModelAndView("home/index", map);
     }
 }
