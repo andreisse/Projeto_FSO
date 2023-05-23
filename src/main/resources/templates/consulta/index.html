@@ -7,13 +7,14 @@
 <body>
     <nav th:replace="layout :: menu">(menu)</nav>
     <main class="container">
-        <a th:href="@{/consulta/novo}" class="btn btn-primary">Novo</a>
+
+        <a th:href="@{/consulta/novo}" class="btn btn-primary">Nova Consulta</a>
+
         <table class="table" id="tabconsultas" >
             <thead>
                 <tr>
                     <th>Consulta</th>
                     <th>Data da Consulta</th>
-                    <th>Horário</th>
                     <th>Descrição</th>
                     <th></th>
                 </tr>
@@ -30,6 +31,7 @@
                         Excluir
                     </button>
                     </td>
+main
                 </tr>
             </tbody>
         </table>

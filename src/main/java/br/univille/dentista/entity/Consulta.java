@@ -22,6 +22,7 @@ public class Consulta {
     private String nomeConsulta;
     
     @Temporal(value = TemporalType.DATE)
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataConsulta;
 
@@ -60,6 +61,7 @@ public class Consulta {
     }
 
     public void setDataConsulta(Date dataConsulta) {
+
         this.dataConsulta = dataConsulta;
     }
 

@@ -4,11 +4,12 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.univille.dentista.entity.Paciente;
+import br.univille.dentista.entity.Dentista;
 
-public interface PacienteRepository extends JpaRepository<Paciente,Long> {
+public interface DentistaRepository extends JpaRepository<Dentista,Long> {
 
-    default List<Paciente> getAll() {
+    default List<Dentista> getAll() {
         return findAll();
     }
+    
 }
