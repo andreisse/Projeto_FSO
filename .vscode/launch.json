@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DentistaApplication<dentista>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.univille.dentista.DentistaApplication",
+            "projectName": "dentista",
+            "args": "--spring.profiles.active=dev",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
