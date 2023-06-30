@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import br.univille.dentista.entity.Consulta;
 
-@Repository
-public interface ConsultaRepository extends JpaRepository<Consulta,Long> {
-    
+public interface ConsultaRepository extends JpaRepository<Consulta, Long> {
+
 }

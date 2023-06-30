@@ -12,11 +12,13 @@
         },
         {
             "type": "java",
-            "name": "Projfabsoft2023Application",
+            "name": "Spring Boot-DentistaApplication<dentista>",
             "request": "launch",
-            "mainClass": "br.univille.projfabsoft2023.Projfabsoft2023Application",
-            "projectName": "projfabsoft2023",
-            "args": "--spring.profiles.active=dev"
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.univille.dentista.DentistaApplication",
+            "projectName": "dentista",
+            "args": "--spring.profiles.active=dev",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
