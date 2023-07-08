@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:include="layout :: htmlhead">
+</head>
+
+<body>
+    <nav th:fragment="menu" class="navbar navbar-expand-lg navbar-dark     bg-dark mb-2">
+        <a class="navbar-brand" href="/">Sistema Odontologico</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/dentista">Dentista</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/paciente">Paciente</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/consulta">Consulta</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <a th:href="@{/dentista/novo}" class="btn btn-primary">Novo Dentista</a>
+        <table class="table" id="tabdentista" >
+            <thead>
+                <tr>
+                    <th>Nome do Dentista</th>
+                    <th>CPF</th>
+                    <th>CRO</th>
+                    <th>Data de Nascimento</th>
+                    <th>Telefone</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="umDentista : ${listaDentista}">
+                    <td th:text="${umDentista.nomeDentista}"></td>
+                    <td th:text="${umDentista.cpf}"></td>
+                    <td th:text="${umDentista.dataNascimento}"></td>
+                    <td th:text="${umDentista.telefone}"></td>
+                    <td><a class="btn btn-secondary" th:href="@{'/dentista/alterar/' + ${umDentista.id}}">Alterar Dentista</a>
+                    <!-- <td><a class="btn btn-danger js-delete"
+                        th:href="@{'dentista/remover/' + ${umDentista.id}}">Excluir Dentista</a>
+                    </td> -->
+                    <!-- <a class="btn btn-danger js-delete" 
+                        th:data-id="${umDentista.id}">
+                        Excluir
+                    </a> -->
+
+
+                    <button class="btn btn-danger js-delete" id="btnDeletePaciente" 
+                    th:data-id="${umDentista.id}">
+                    Excluir 
+                </button>
+
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modaldentista">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Excluir dentista</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirma a exclusão do Dentista?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnnao">Não</button>
+                    <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:include="layout :: footer">(footer)</div>
+    <script th:src="@{/script.js}" ></script>
+</body>
+
+</html>
