@@ -1,6 +1,5 @@
 (function(){
     $("#tabpacientes").on("click", ".js-delete", function(){
-        console.log("AKVLKAJVJKAHVLKAHVKJAEHjk");
         let botaoClicado = $(this);
         $("#btnsim").attr("data-id", botaoClicado.attr("data-id"));
         $("#modalpaciente").modal("show");
